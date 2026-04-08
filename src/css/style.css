@@ -1,4 +1,4 @@
-/* ----- Variables de iconos (puedes colocarlas junto a otras variables) ----- */
+/* ----- Variables de iconos ----- */
 :root {
     --icon-size: 1.4rem;
     --icon-gap: .4rem;
@@ -22,15 +22,10 @@
 /* ---------- Variables de color ---------- */
 :root {
     --clr-primary: #2c3e50;
-    /* azul oscuro */
     --clr-accent: #3498db;
-    /* azul brillante */
     --clr-bg: #fafafa;
-    /* fondo claro */
     --clr-text: #333333;
-    /* texto principal */
     --clr-muted: #777777;
-    /* texto secundario */
 }
 
 /* ---------- Reset básico ---------- */
@@ -129,32 +124,21 @@ body {
 }
 
 /* ---------- Secciones ---------- */
-
-/* 1. Elimina márgenes/paddings inesperados en los párrafos */
 p {
     margin-top: 0;
     margin-bottom: 1rem;
-    /* o el valor que prefieras */
     line-height: 1.6;
-    /* mejora la legibilidad */
 }
 
-/* 2. Controla el espacio alrededor del   */
 br {
     line-height: 0;
-    /* evita que el   añada espacio extra */
 }
 
-/* 3. Da estilo al nivel del idioma (N5) */
 .nivel {
     color: inherit;
-    /* hereda el color del texto circundante */
-    font-weight: bold;
-    /* opcional, para resaltarlo ligeramente */
+    font-weight: 600;
 }
 
-/* 4. Si tu tema aplica colores de enlace a elementos desconocidos,
-   asegúrate de que los <span> no hereden esos estilos */
 span {
     color: inherit;
     text-decoration: none;
@@ -171,45 +155,21 @@ section h2 {
     font-size: 1.8rem;
 }
 
-/* -------------------------------------------------
-   1. Contenedor global (centrado y ancho máximo)
-   ------------------------------------------------- */
-.content-wrapper {
-    max-width: 960px;
-    /* ancho máximo, ajústalo a tu gusto */
-    margin: 0 auto;
-    /* centra horizontalmente */
-    padding: 0 1.5rem;
-    /* espacio lateral interno */
-}
-
-/* -------------------------------------------------
-   2. Sección base (mismo estilo que el resto)
-   ------------------------------------------------- */
+/* ---------- Sección base ---------- */
 .section {
     background: #fafafa;
-    /* tono neutro, cambia si tu tema es oscuro */
     border-radius: 8px;
     padding: 1.5rem;
     margin: 2rem 0;
-    /* separación superior e inferior */
     box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
 }
 
-/* -------------------------------------------------
-   3. Título de sección
-   ------------------------------------------------- */
 .section h2 {
     margin-top: 0;
-    /* evita doble margen con .section */
     font-size: 1.75rem;
     color: #2c3e50;
-    /* color principal, ajústalo a tu paleta */
 }
 
-/* -------------------------------------------------
-   4. Texto dentro de la sección
-   ------------------------------------------------- */
 .section p,
 .section blockquote,
 .section ul,
@@ -218,18 +178,7 @@ section h2 {
     margin-bottom: 1rem;
 }
 
-/* -------------------------------------------------
-   5. Estilo del span .nivel (evita azul)
-   ------------------------------------------------- */
-.nivel {
-    color: inherit;
-    /* hereda el color del párrafo */
-    font-weight: 600;
-}
-
-/* -------------------------------------------------
-   6. Bloques de código (para que los comentarios se vean)
-   ------------------------------------------------- */
+/* ---------- Bloques de código ---------- */
 code,
 pre {
     background: #f5f5f5;
@@ -243,30 +192,14 @@ pre {
     padding: 1rem;
 }
 
-/* -------------------------------------------------
-   7. Enlaces dentro de .section (no azul por defecto)
-   ------------------------------------------------- */
+/* ---------- Enlaces dentro de .section ---------- */
 .section a {
     color: #0066cc;
-    /* color de enlace que combine con tu tema */
     text-decoration: underline;
 }
 
 .section a:hover {
     opacity: .8;
-}
-
-/* -------------------------------------------------
-   8. Responsive tweaks (opcionales)
-   ------------------------------------------------- */
-@media (max-width: 600px) {
-    .content-wrapper {
-        padding: 0 .8rem;
-    }
-
-    .section {
-        padding: 1rem;
-    }
 }
 
 /* ---------- Tabla de comandos (global) ---------- */
@@ -292,7 +225,7 @@ table tbody tr:nth-child(even) {
     background: #f9f9f9;
 }
 
-/* ---------- Bloques de código (copy‑to‑clipboard) ---------- */
+/* ---------- Bloques de código (copy-to-clipboard) ---------- */
 .command-block {
     background: #f5f5f5;
     border: 1px solid #ddd;
@@ -313,102 +246,6 @@ table tbody tr:nth-child(even) {
     padding: .3rem .6rem;
     font-size: .85rem;
     cursor: pointer;
-}
-
-/* -------------------------------------------------
-   Bloque “Conceptos básicos de Git”
-   ------------------------------------------------- */
-
-/* Grid que adapta el número de columnas según el ancho */
-.concept-grid {
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-}
-
-/* Tarjeta individual */
-.concept-card {
-    background: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 6px;
-    padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, .08);
-    transition: transform .15s ease, box-shadow .15s ease;
-}
-
-/* Hover para dar sensación de “clickeable” */
-.concept-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, .12);
-}
-
-/* Título de cada tarjeta */
-.concept-title {
-    display: flex;
-    align-items: center;
-    font-size: 1.1rem;
-    margin-bottom: .5rem;
-    color: var(--clr-primary);
-}
-
-/* Iconos dentro del título */
-.concept-title .icon {
-    width: var(--icon-size);
-    height: var(--icon-size);
-    fill: currentColor;
-    margin-right: var(--icon-gap);
-}
-
-/* Descripción breve */
-.concept-desc {
-    margin: .4rem 0 0.8rem;
-    line-height: 1.4;
-    color: var(--clr-text);
-}
-
-/* -------------------------------------------------
-   Feedback de copiado en botones
-   ------------------------------------------------- */
-
-/* Bloque de comando con posición relativa para el feedback */
-.command-block {
-    position: relative;
-}
-
-/* Mensaje de feedback (oculto por defecto) */
-.copy-feedback {
-    position: absolute;
-    top: 0.4rem;
-    right: 3.5rem;
-    /* Ajusta según el ancho del botón */
-    background: #27ae60;
-    color: #fff;
-    padding: 0.3rem 0.6rem;
-    border-radius: 3px;
-    font-size: 0.75rem;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-/* Mostrar feedback cuando tiene la clase .show */
-.copy-feedback.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Estilo del botón de copiar (asegúrate de tener esto también) */
-.copy-btn {
-    position: absolute;
-    top: 0.4rem;
-    right: 0.4rem;
-    background: var(--clr-accent);
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    padding: 0.3rem 0.6rem;
-    font-size: 0.85rem;
-    cursor: pointer;
     transition: background 0.3s ease, transform 0.1s ease;
 }
 
@@ -420,15 +257,65 @@ table tbody tr:nth-child(even) {
     transform: scale(0.95);
 }
 
-/* Responsividad: reduce márgenes en pantallas pequeñas */
-@media (max-width: 480px) {
-    .concept-card {
-        padding: .8rem;
-    }
+.copy-feedback {
+    position: absolute;
+    top: 0.4rem;
+    right: 3.5rem;
+    background: #27ae60;
+    color: #fff;
+    padding: 0.3rem 0.6rem;
+    border-radius: 3px;
+    font-size: 0.75rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
 
-    .concept-title {
-        font-size: 1rem;
-    }
+.copy-feedback.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ---------- Conceptos básicos de Git (Grid) ---------- */
+.concept-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.concept-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .08);
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.concept-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .12);
+}
+
+.concept-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    margin-bottom: .5rem;
+    color: var(--clr-primary);
+}
+
+.concept-title .icon {
+    width: var(--icon-size);
+    height: var(--icon-size);
+    fill: currentColor;
+    margin-right: var(--icon-gap);
+}
+
+.concept-desc {
+    margin: .4rem 0 0.8rem;
+    line-height: 1.4;
+    color: var(--clr-text);
 }
 
 /* ---------- Botón principal (Práctica) ---------- */
@@ -470,8 +357,7 @@ table tbody tr:nth-child(even) {
     text-decoration: underline;
 }
 
-/* ---------- Tabla exclusiva “why‑git” ---------- */
-/* (Se coloca después de los estilos genéricos de tabla) */
+/* ---------- Tabla exclusiva "why-git" ---------- */
 .why-git-table {
     width: 100%;
     border-collapse: collapse;
@@ -488,7 +374,6 @@ table tbody tr:nth-child(even) {
 
 .why-git-table th {
     background-color: #4a90e2;
-    /* azul suave */
     color: #fff;
 }
 
@@ -500,7 +385,127 @@ table tbody tr:nth-child(even) {
     background-color: #e1f5fe;
 }
 
-/* ---------- Responsividad ---------- */
+/* ---------- Imágenes de autores ---------- */
+.authors-images-container figure img {
+    width: 100%;
+    max-width: 250px;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.authors-images-container figure img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    filter: brightness(1.05);
+}
+
+/* =====================================================
+   LAYOUT GRID: Main + Aside (SIDEBAR) - DEFINICIÓN ÚNICA
+   ===================================================== */
+
+.content-wrapper {
+    display: grid !important;
+    grid-template-columns: 1fr 320px !important;
+    gap: 2rem !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 1.5rem !important;
+}
+
+.autores-sidebar {
+    background: #f5f7fa !important;
+    border-left: 4px solid var(--clr-accent) !important;
+    padding: 1.5rem !important;
+    border-radius: 8px !important;
+    height: fit-content !important;
+    position: sticky !important;
+    top: 80px !important;
+    max-height: calc(100vh - 100px) !important;
+    overflow-y: auto !important;
+}
+
+.autores-sidebar h2 {
+    font-size: 1.4rem !important;
+    margin-bottom: 1rem !important;
+    color: var(--clr-primary) !important;
+    border-bottom: 2px solid var(--clr-accent) !important;
+    padding-bottom: 0.5rem !important;
+}
+
+.autor-card {
+    display: flex !important;
+    gap: 1rem !important;
+    margin-bottom: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+    border-bottom: 1px solid #e0e0e0 !important;
+}
+
+.autor-card:last-child {
+    border-bottom: none !important;
+}
+
+.autor-img {
+    flex-shrink: 0 !important;
+    width: 80px !important;
+    height: 80px !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+}
+
+.autor-img img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+.autor-info {
+    flex: 1 !important;
+}
+
+.autor-info h3 {
+    font-size: 1rem !important;
+    margin: 0 0 0.5rem 0 !important;
+}
+
+.autor-info p {
+    font-size: 0.88rem !important;
+    margin: 0 0 0.5rem 0 !important;
+}
+
+.autor-details summary {
+    cursor: pointer !important;
+    color: var(--clr-accent) !important;
+    font-size: 0.85rem !important;
+}
+
+/* =====================================================
+   RESPONSIVIDAD
+   ===================================================== */
+
+@media (max-width: 900px) {
+    .content-wrapper {
+        grid-template-columns: 1fr !important;
+    }
+
+    .autores-sidebar {
+        order: -1 !important;
+        position: static !important;
+        border-left: none !important;
+        border-top: 4px solid var(--clr-accent) !important;
+        max-height: none !important;
+    }
+
+    .autor-card {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+}
+
 @media (max-width: 768px) {
     .site-nav ul.menu {
         flex-direction: column;
@@ -527,6 +532,21 @@ table tbody tr:nth-child(even) {
     }
 }
 
+@media (max-width: 600px) {
+    .content-wrapper {
+        padding: 0 .8rem !important;
+    }
+
+    .section {
+        padding: 1rem;
+    }
+
+    .authors-images-container figure img {
+        max-width: 180px;
+        height: 180px;
+    }
+}
+
 @media (max-width: 480px) {
     .site-header h1 {
         font-size: 1.6rem;
@@ -542,351 +562,17 @@ table tbody tr:nth-child(even) {
         padding: .4rem;
     }
 
-    /* Ajuste opcional para la tabla “why‑git” en móvil */
     .why-git-table th,
     .why-git-table td {
         padding: 6px;
-        /* un poco menos de espacio en pantallas pequeñas */
         font-size: .9rem;
     }
-}
 
-/* ---------- Imágenes de autores (GRID CORREGIDO) ---------- */
-/* ---------- Efecto Hover en Imágenes de Autores ---------- */
-/* ---------- Imágenes de autores - Tamaño uniforme ---------- */
-.authors-images-container figure img {
-    width: 100%;
-    max-width: 250px;
-    /* Ancho máximo fijo */
-    height: 250px;
-    /* Alto fijo para uniformidad */
-    object-fit: cover;
-    /* Recorta la imagen para mantener proporción */
-    object-position: center;
-    /* Centra el recorte */
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
-}
-
-/* Efecto Hover */
-.authors-images-container figure img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-    filter: brightness(1.05);
-}
-
-/* Responsive: ajustar en móviles */
-@media (max-width: 600px) {
-    .authors-images-container figure img {
-        max-width: 180px;
-        height: 180px;
-    }
-}
-
-/* Layout: Main + Aside */
-.content-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 320px;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-}
-
-/* Sidebar de autores */
-.autores-sidebar {
-    background: #f5f7fa;
-    border-left: 4px solid var(--clr-accent);
-    padding: 1.5rem;
-    border-radius: 8px;
-    height: fit-content;
-    position: sticky;
-    top: 80px;
-    max-height: calc(100vh - 100px);
-    overflow-y: auto;
-}
-
-.autores-sidebar h2 {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-    color: var(--clr-primary);
-    border-bottom: 2px solid var(--clr-accent);
-    padding-bottom: 0.5rem;
-}
-
-/* Tarjetas de autores */
-.autor-card {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-.autor-card:last-child {
-    border-bottom: none;
-}
-
-.autor-img {
-    flex-shrink: 0;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-.autor-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.autor-info {
-    flex: 1;
-}
-
-.autor-info h3 {
-    font-size: 1rem;
-    margin: 0 0 0.5rem 0;
-}
-
-.autor-info p {
-    font-size: 0.88rem;
-    margin: 0 0 0.5rem 0;
-}
-
-.autor-details summary {
-    cursor: pointer;
-    color: var(--clr-accent);
-    font-size: 0.85rem;
-}
-
-/* Responsive: móvil */
-@media (max-width: 900px) {
-    .content-wrapper {
-        grid-template-columns: 1fr;
+    .concept-card {
+        padding: .8rem;
     }
 
-    .autores-sidebar {
-        order: -1;
-        position: static;
-        border-left: none;
-        border-top: 4px solid var(--clr-accent);
-    }
-
-    .autor-card {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-}
-
-/* =====================================================
-   LAYOUT GRID: Main + Aside (SIDEBAR)
-   ===================================================== */
-
-.content-wrapper {
-    display: grid !important;
-    grid-template-columns: 1fr 320px !important;
-    gap: 2rem !important;
-    max-width: 1200px !important;
-    margin: 0 auto !important;
-    padding: 0 1.5rem !important;
-}
-
-/* Sidebar de autores */
-.autores-sidebar {
-    background: #f5f7fa !important;
-    border-left: 4px solid var(--clr-accent) !important;
-    padding: 1.5rem !important;
-    border-radius: 8px !important;
-    height: fit-content !important;
-    position: sticky !important;
-    top: 80px !important;
-    max-height: calc(100vh - 100px) !important;
-    overflow-y: auto !important;
-}
-
-.autores-sidebar h2 {
-    font-size: 1.4rem !important;
-    margin-bottom: 1rem !important;
-    color: var(--clr-primary) !important;
-    border-bottom: 2px solid var(--clr-accent) !important;
-    padding-bottom: 0.5rem !important;
-}
-
-/* Tarjetas de autores */
-.autor-card {
-    display: flex !important;
-    gap: 1rem !important;
-    margin-bottom: 1.5rem !important;
-    padding-bottom: 1.5rem !important;
-    border-bottom: 1px solid #e0e0e0 !important;
-}
-
-.autor-card:last-child {
-    border-bottom: none !important;
-}
-
-.autor-img {
-    flex-shrink: 0 !important;
-    width: 80px !important;
-    height: 80px !important;
-    border-radius: 50% !important;
-    overflow: hidden !important;
-}
-
-.autor-img img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-}
-
-.autor-info {
-    flex: 1 !important;
-}
-
-.autor-info h3 {
-    font-size: 1rem !important;
-    margin: 0 0 0.5rem 0 !important;
-}
-
-.autor-info p {
-    font-size: 0.88rem !important;
-    margin: 0 0 0.5rem 0 !important;
-}
-
-.autor-details summary {
-    cursor: pointer !important;
-    color: var(--clr-accent) !important;
-    font-size: 0.85rem !important;
-}
-
-/* Responsive: móvil */
-@media (max-width: 900px) {
-    .content-wrapper {
-        grid-template-columns: 1fr !important;
-    }
-
-    .autores-sidebar {
-        order: -1 !important;
-        position: static !important;
-        border-left: none !important;
-        border-top: 4px solid var(--clr-accent) !important;
-    }
-
-    .autor-card {
-        flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-    }
-}
-
-/* =====================================================
-   LAYOUT FINAL: Grid con Sidebar (Autores)
-   Esto sobreescribe cualquier definición anterior
-   ===================================================== */
-
-/* 1. El contenedor principal se convierte en Grid */
-.content-wrapper {
-    display: grid !important;
-    grid-template-columns: 1fr 320px !important;
-    /* Izquierda flexible, Derecha fija 320px */
-    gap: 2rem !important;
-    max-width: 1200px !important;
-    margin: 0 auto !important;
-    padding: 0 1.5rem !important;
-}
-
-/* 2. Estilo del Sidebar (Autores) */
-.autores-sidebar {
-    background: #f5f7fa !important;
-    border-left: 4px solid var(--clr-accent) !important;
-    padding: 1.5rem !important;
-    border-radius: 8px !important;
-    height: fit-content !important;
-    position: sticky !important;
-    top: 80px !important;
-    /* Se queda fijo al hacer scroll */
-    max-height: calc(100vh - 100px) !important;
-    overflow-y: auto !important;
-}
-
-.autores-sidebar h2 {
-    font-size: 1.4rem !important;
-    margin-bottom: 1rem !important;
-    color: var(--clr-primary) !important;
-    border-bottom: 2px solid var(--clr-accent) !important;
-    padding-bottom: 0.5rem !important;
-}
-
-/* 3. Tarjetas de autores dentro del sidebar */
-.autor-card {
-    display: flex !important;
-    gap: 1rem !important;
-    margin-bottom: 1.5rem !important;
-    padding-bottom: 1.5rem !important;
-    border-bottom: 1px solid #e0e0e0 !important;
-}
-
-.autor-card:last-child {
-    border-bottom: none !important;
-}
-
-.autor-img {
-    flex-shrink: 0 !important;
-    width: 80px !important;
-    height: 80px !important;
-    border-radius: 50% !important;
-    overflow: hidden !important;
-}
-
-.autor-img img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-}
-
-.autor-info {
-    flex: 1 !important;
-}
-
-.autor-info h3 {
-    font-size: 1rem !important;
-    margin: 0 0 0.5rem 0 !important;
-}
-
-.autor-info p {
-    font-size: 0.88rem !important;
-    margin: 0 0 0.5rem 0 !important;
-}
-
-.autor-details summary {
-    cursor: pointer !important;
-    color: var(--clr-accent) !important;
-    font-size: 0.85rem !important;
-}
-
-/* 4. RESPONSIVIDAD: Cuando la pantalla es menor a 900px */
-@media (max-width: 900px) {
-    .content-wrapper {
-        grid-template-columns: 1fr !important;
-        /* Una sola columna */
-    }
-
-    .autores-sidebar {
-        order: -1 !important;
-        /* Mover autores arriba en móvil */
-        position: static !important;
-        border-left: none !important;
-        border-top: 4px solid var(--clr-accent) !important;
-        max-height: none !important;
-    }
-
-    .autor-card {
-        flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
+    .concept-title {
+        font-size: 1rem;
     }
 }

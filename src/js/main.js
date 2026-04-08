@@ -4,10 +4,13 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ========== MENÚ MÓVIL ==========
+    // ========== VARIABLES GLOBALES ==========
     const menuToggle = document.getElementById('mobile-menu-toggle');
     const navMenu = document.querySelector('.site-nav ul.menu');
+    const navLinks = document.querySelectorAll('.site-nav a[href^="#"]');
+    const sections = document.querySelectorAll('section[id]');
 
+    // ========== MENÚ MÓVIL ==========
     if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', () => {
             navMenu.classList.toggle('show');
@@ -65,9 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ========== NAVEGACIÓN ACTIVA ==========
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.site-nav a[href^="#"]');
-
     function setActiveLink() {
         const scrollPos = window.scrollY + 100;
 
@@ -106,7 +106,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Cerrar menú móvil si está abierto
                 if (navMenu && navMenu.classList.contains('show')) {
                     navMenu.classList.remove('show');
-                    menuToggle.textContent = '☰';
+                    if (menuToggle) {
+                        menuToggle.textContent = '☰';
+                    }
                 }
             }
         });
