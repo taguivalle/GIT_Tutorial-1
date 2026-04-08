@@ -1,55 +1,116 @@
-/* -------------------------------------------------
-   main.js – lógica de interacción para la tutoría Git
-   ------------------------------------------------- */
+/**
+ * main.js - Funcionalidad interactiva para el tutorial de Git & GitHub
+ */
 
 document.addEventListener('DOMContentLoaded', () => {
-    /* -------------------------------------------------
-       1️⃣  MENU MÓVIL (hamburguesa)
-       ------------------------------------------------- */
+
+    // ========== MENÚ MÓVIL ==========
     const menuToggle = document.getElementById('mobile-menu-toggle');
     const navMenu = document.querySelector('.site-nav ul.menu');
 
     if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('show'); // muestra/oculta el menú en móvil
+            navMenu.classList.toggle('show');
+            // Cambiar icono de hamburguesa a X
+            menuToggle.textContent = navMenu.classList.contains('show') ? '✕' : '☰';
         });
     }
 
-    /* -------------------------------------------------
-       2️⃣  BOTONES “COPIAR” EN BLOQUES DE CÓDIGO
-       ------------------------------------------------- */
+    // ========== BOTONES DE COPIAR CÓDIGO ==========
     const commandBlocks = document.querySelectorAll('.command-block');
 
     commandBlocks.forEach(block => {
-        // Creamos el botón y el mensaje de feedback
-        const copyBtn = document.createElement('button');
-        copyBtn.className = 'copy-btn';
-        copyBtn.textContent = 'Copiar';
+        const codeElement = block.querySelector('code');
 
-        const feedback = document.createElement('div');
-        feedback.className = 'copy-feedback';
-        feedback.textContent = '¡Copiado!';
+        if (codeElement) {
+            // Crear botón de copiar
+            const copyBtn = document.createElement('button');
+            copyBtn.className = 'copy-btn';
+            copyBtn.textContent = 'Copiar';
+            copyBtn.setAttribute('aria-label', 'Copiar código');
 
-        // Insertamos el botón y el mensaje dentro del bloque
-        block.appendChild(copyBtn);
-        block.appendChild(feedback);
+            // Crear elemento de feedback
+            const feedback = document.createElement('span');
+            feedback.className = 'copy-feedback';
+            feedback.textContent = '¡Copiado!';
 
-        // Acción al pulsar el botón
-        copyBtn.addEventListener('click', () => {
-            const code = block.querySelector('pre code');
-            if (!code) return;
+            // Insertar elementos
+            block.appendChild(copyBtn);
+            block.appendChild(feedback);
 
-            // Copiamos el texto al portapapeles
-            navigator.clipboard.writeText(code.innerText).then(() => {
-                // Mostramos el mensaje de éxito
-                feedback.classList.add('show');
-                // Lo ocultamos tras 1.5 s
-                setTimeout(() => feedback.classList.remove('show'), 1500);
-            }).catch(err => {
-                // En caso de error (p. ej. HTTPS requerido)
-                console.error('Error al copiar al portapapeles:', err);
+            // Evento de clic
+            copyBtn.addEventListener('click', async () => {
+                try {
+                    await navigator.clipboard.writeText(codeElement.textContent);
+
+                    // Mostrar feedback
+                    feedback.classList.add('show');
+                    copyBtn.textContent = '¡Listo!';
+
+                    // Ocultar después de 2 segundos
+                    setTimeout(() => {
+                        feedback.classList.remove('show');
+                        copyBtn.textContent = 'Copiar';
+                    }, 2000);
+
+                } catch (err) {
+                    console.error('Error al copiar:', err);
+                    copyBtn.textContent = 'Error';
+                    setTimeout(() => {
+                        copyBtn.textContent = 'Copiar';
+                    }, 2000);
+                }
             });
+        }
+    });
+
+    // ========== NAVEGACIÓN ACTIVA ==========
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.site-nav a[href^="#"]');
+
+    function setActiveLink() {
+        const scrollPos = window.scrollY + 100;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+
+            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${sectionId}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }
+
+    window.addEventListener('scroll', setActiveLink);
+    setActiveLink(); // Ejecutar al cargar
+
+    // ========== SCROLL SUAVE ==========
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+
+                // Cerrar menú móvil si está abierto
+                if (navMenu && navMenu.classList.contains('show')) {
+                    navMenu.classList.remove('show');
+                    menuToggle.textContent = '☰';
+                }
+            }
         });
     });
 
-}); // <-- Cierre del listener DOMContentLoaded
+    console.log('✅ Tutorial Git & GitHub - Scripts cargados correctamente');
+});
