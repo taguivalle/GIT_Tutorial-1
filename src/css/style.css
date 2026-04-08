@@ -583,3 +583,310 @@ table tbody tr:nth-child(even) {
         height: 180px;
     }
 }
+
+/* Layout: Main + Aside */
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Sidebar de autores */
+.autores-sidebar {
+    background: #f5f7fa;
+    border-left: 4px solid var(--clr-accent);
+    padding: 1.5rem;
+    border-radius: 8px;
+    height: fit-content;
+    position: sticky;
+    top: 80px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+}
+
+.autores-sidebar h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--clr-primary);
+    border-bottom: 2px solid var(--clr-accent);
+    padding-bottom: 0.5rem;
+}
+
+/* Tarjetas de autores */
+.autor-card {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.autor-card:last-child {
+    border-bottom: none;
+}
+
+.autor-img {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.autor-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.autor-info {
+    flex: 1;
+}
+
+.autor-info h3 {
+    font-size: 1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.autor-info p {
+    font-size: 0.88rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.autor-details summary {
+    cursor: pointer;
+    color: var(--clr-accent);
+    font-size: 0.85rem;
+}
+
+/* Responsive: móvil */
+@media (max-width: 900px) {
+    .content-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .autores-sidebar {
+        order: -1;
+        position: static;
+        border-left: none;
+        border-top: 4px solid var(--clr-accent);
+    }
+
+    .autor-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/* =====================================================
+   LAYOUT GRID: Main + Aside (SIDEBAR)
+   ===================================================== */
+
+.content-wrapper {
+    display: grid !important;
+    grid-template-columns: 1fr 320px !important;
+    gap: 2rem !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 1.5rem !important;
+}
+
+/* Sidebar de autores */
+.autores-sidebar {
+    background: #f5f7fa !important;
+    border-left: 4px solid var(--clr-accent) !important;
+    padding: 1.5rem !important;
+    border-radius: 8px !important;
+    height: fit-content !important;
+    position: sticky !important;
+    top: 80px !important;
+    max-height: calc(100vh - 100px) !important;
+    overflow-y: auto !important;
+}
+
+.autores-sidebar h2 {
+    font-size: 1.4rem !important;
+    margin-bottom: 1rem !important;
+    color: var(--clr-primary) !important;
+    border-bottom: 2px solid var(--clr-accent) !important;
+    padding-bottom: 0.5rem !important;
+}
+
+/* Tarjetas de autores */
+.autor-card {
+    display: flex !important;
+    gap: 1rem !important;
+    margin-bottom: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+    border-bottom: 1px solid #e0e0e0 !important;
+}
+
+.autor-card:last-child {
+    border-bottom: none !important;
+}
+
+.autor-img {
+    flex-shrink: 0 !important;
+    width: 80px !important;
+    height: 80px !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+}
+
+.autor-img img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+.autor-info {
+    flex: 1 !important;
+}
+
+.autor-info h3 {
+    font-size: 1rem !important;
+    margin: 0 0 0.5rem 0 !important;
+}
+
+.autor-info p {
+    font-size: 0.88rem !important;
+    margin: 0 0 0.5rem 0 !important;
+}
+
+.autor-details summary {
+    cursor: pointer !important;
+    color: var(--clr-accent) !important;
+    font-size: 0.85rem !important;
+}
+
+/* Responsive: móvil */
+@media (max-width: 900px) {
+    .content-wrapper {
+        grid-template-columns: 1fr !important;
+    }
+
+    .autores-sidebar {
+        order: -1 !important;
+        position: static !important;
+        border-left: none !important;
+        border-top: 4px solid var(--clr-accent) !important;
+    }
+
+    .autor-card {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+}
+
+/* =====================================================
+   LAYOUT FINAL: Grid con Sidebar (Autores)
+   Esto sobreescribe cualquier definición anterior
+   ===================================================== */
+
+/* 1. El contenedor principal se convierte en Grid */
+.content-wrapper {
+    display: grid !important;
+    grid-template-columns: 1fr 320px !important;
+    /* Izquierda flexible, Derecha fija 320px */
+    gap: 2rem !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 1.5rem !important;
+}
+
+/* 2. Estilo del Sidebar (Autores) */
+.autores-sidebar {
+    background: #f5f7fa !important;
+    border-left: 4px solid var(--clr-accent) !important;
+    padding: 1.5rem !important;
+    border-radius: 8px !important;
+    height: fit-content !important;
+    position: sticky !important;
+    top: 80px !important;
+    /* Se queda fijo al hacer scroll */
+    max-height: calc(100vh - 100px) !important;
+    overflow-y: auto !important;
+}
+
+.autores-sidebar h2 {
+    font-size: 1.4rem !important;
+    margin-bottom: 1rem !important;
+    color: var(--clr-primary) !important;
+    border-bottom: 2px solid var(--clr-accent) !important;
+    padding-bottom: 0.5rem !important;
+}
+
+/* 3. Tarjetas de autores dentro del sidebar */
+.autor-card {
+    display: flex !important;
+    gap: 1rem !important;
+    margin-bottom: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+    border-bottom: 1px solid #e0e0e0 !important;
+}
+
+.autor-card:last-child {
+    border-bottom: none !important;
+}
+
+.autor-img {
+    flex-shrink: 0 !important;
+    width: 80px !important;
+    height: 80px !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+}
+
+.autor-img img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+.autor-info {
+    flex: 1 !important;
+}
+
+.autor-info h3 {
+    font-size: 1rem !important;
+    margin: 0 0 0.5rem 0 !important;
+}
+
+.autor-info p {
+    font-size: 0.88rem !important;
+    margin: 0 0 0.5rem 0 !important;
+}
+
+.autor-details summary {
+    cursor: pointer !important;
+    color: var(--clr-accent) !important;
+    font-size: 0.85rem !important;
+}
+
+/* 4. RESPONSIVIDAD: Cuando la pantalla es menor a 900px */
+@media (max-width: 900px) {
+    .content-wrapper {
+        grid-template-columns: 1fr !important;
+        /* Una sola columna */
+    }
+
+    .autores-sidebar {
+        order: -1 !important;
+        /* Mover autores arriba en móvil */
+        position: static !important;
+        border-left: none !important;
+        border-top: 4px solid var(--clr-accent) !important;
+        max-height: none !important;
+    }
+
+    .autor-card {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+}

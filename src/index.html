@@ -9,13 +9,11 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="./assets/icons/git.ico" type="image/x-icon">
 
-    <!-- Preload del sprite (solo si lo mantienes externo) -->
-    <link rel="preload" href="./assets/icons/icons.svg" as="image" crossorigin>
-
     <!-- Normalización -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
         integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous">
-    <!-- CSP (meta) -->
+
+    <!-- CSP (seguridad) -->
     <meta http-equiv="Content-Security-Policy" content="
           default-src 'self';
           style-src   'self' https://cdnjs.cloudflare.com 'unsafe-inline';
@@ -25,9 +23,9 @@
           connect-src 'self' https://cdnjs.cloudflare.com;
           frame-src   https://replit.com https://*.replit.com;
         ">
+
     <!-- Estilos propios -->
     <link rel="stylesheet" href="./css/style.css">
-</head>
 </head>
 
 <body>
@@ -40,336 +38,173 @@
 
     <nav class="site-nav" role="navigation" aria-label="Menú principal">
         <ul class="menu">
-            <li>
-                <a href="#intro">
-                    <svg class="icon">
-                        <use href="./assets/svg/bulbo.svg" alt="Intro" class="intro" width="18" height="18"></use>
-                    </svg>
-                    Introducción
-                </a>
-            </li>
-            <li>
-                <a href="#conceptos">
-                    <svg class="icon">
-                        <use href="./assets/svg/consejos.svg" alt="Consejos" class="consejos" width="18" height="18">
-                        </use>
-                    </svg>
-                    Conceptos básicos
-                </a>
-            </li>
-            <li>
-                <a href=" #instalacion">
-                    <svg class="icon">
-                        <use href="./assets/svg/instalacion.svg" alt="Instalacion" class="instalacion" width="18"
-                            height="18"></use>
-
-                    </svg>
-                    Instalación
-                </a>
-            </li>
-            <li>
-                <a href="#comandos">
-                    <svg class="icon">
-                        <use href="./assets/svg/comandosEsenciales.svg" alt="Comandos" class="comandos" width="18"
-                            height="18"></use>
-                    </svg>
-                    Comandos esenciales
-                </a>
-            </li>
-            <li>
-                <a href="#flujo">
-                    <svg class="icon">
-                        <use href="./assets/svg/flujo.svg" alt="Flujo" class="flujo" width="18" height="18"></use>
-                    </svg>
-                    Flujo de trabajo
-                </a>
-            </li>
-            <li>
-                <a href="#github">
-                    <svg class="icon">
-                        <use href="./assets/svg/github.svg" alt="Github" class="github" width="18" height="18"></use>
-                    </svg>
-                    GitHub
-                </a>
-            </li>
-            <li>
-                <a href="#practica">
-                    <svg class="icon">
-                        <use href="./assets/svg/practica.svg" alt="Practica" class="practica" width="18" height="18">
-                        </use>
-                    </svg>
-                    Práctica
-                </a>
-            </li>
+            <li><a href="#intro"><svg class="icon">
+                        <use href="./assets/svg/bulbo.svg" />
+                    </svg>Introducción</a></li>
+            <li><a href="#conceptos"><svg class="icon">
+                        <use href="./assets/svg/consejos.svg" />
+                    </svg>Conceptos básicos</a></li>
+            <li><a href="#instalacion"><svg class="icon">
+                        <use href="./assets/svg/instalacion.svg" />
+                    </svg>Instalación</a></li>
+            <li><a href="#comandos"><svg class="icon">
+                        <use href="./assets/svg/comandosEsenciales.svg" />
+                    </svg>Comandos esenciales</a></li>
+            <li><a href="#flujo"><svg class="icon">
+                        <use href="./assets/svg/flujo.svg" />
+                    </svg>Flujo de trabajo</a></li>
+            <li><a href="#github"><svg class="icon">
+                        <use href="./assets/svg/github.svg" />
+                    </svg>GitHub</a></li>
+            <li><a href="#practica"><svg class="icon">
+                        <use href="./assets/svg/practica.svg" />
+                    </svg>Práctica</a></li>
         </ul>
     </nav>
 
-    <!-- ==== CONTENEDOR GLOBAL ==== -->
+    <!-- ==== CONTENEDOR GLOBAL CON GRID ==== -->
     <div class="content-wrapper">
-        <!-- ===== SECCIÓN AUTORES ===== -->
-        <section id="autores" class="section">
-            <h2>Sobre los autores</h2>
-            <p><strong>Scott Chacon</strong> y <strong>Ben Straub</strong> son reconocidos expertos en control de
-                versiones.
-                Juntos escribieron <em>Pro Git</em>, publicado por <a href="https://www.apress.com/" target="_blank"
-                    rel="noopener noreferrer">Apress</a>. El libro se ha convertido en la referencia estándar para
-                aprender
-                Git.</p>
 
-            <h3>Breve reseña de <strong>Scott Chacón</strong></h3>
-            <p class="justificado">
-                El nombre es
-                <a href="https://scottchacon.com/about/" target="_blank" rel="noopener noreferrer">Scott Chacón</a>.
-                Se presenta como desarrollador de software, evangelista de Git, orador, autor, viajero mundial, padre,
-                marido, rescatador de gatos y perros, firmante de bebés y domador de gorilas.
-                Trabaja en <a href="https://gitbutler.com/" target="_blank"
-                    rel="noopener noreferrer"><strong>GitButler</strong></a>, co‑fundó <a
-                    href="https://chatterbug.com/en/" target="_blank"
-                    rel="noopener noreferrer"><strong>Chatterbug</strong></a> y <a
-                    href="https://github.com/search?q=Scott%20Chacon&type=repositories" target="_blank"
-                    rel="noopener noreferrer"><strong>GitHub</strong></a>.
-                Además posee una certificación <a
-                    href="https://www.wsetglobal.com/es/spanish-qualifications/level-3-award-in-wines-es/"
-                    target="_blank" rel="noopener noreferrer">WSET</a> Nivel 3 en vinos y licores, dirige un refugio de
-                perros fuera de Berlín y habla seis idiomas:
+        <!-- ===== ASIDE: Autores (SIDEBAR LATERAL) ===== -->
+        <aside id="autores" class="autores-sidebar" aria-labelledby="autores-title">
+            <h2 id="autores-title">👥 Sobre los autores</h2>
 
-                🇬🇧 Inglés nativo,
-                🇩🇪 Alemán (B2),
-                🤟 Lengua de señas americana (B1),
-                🇫🇷 Francés (A2),
-                🇪🇸 Español (A1),
-                🇯🇵 Japonés (N5) <span class="nivel">(N5)</span>.
-            </p>
-            <!-- ... todo el texto de reseñas ... -->
+            <div class="autores-intro">
+                <p><strong>Scott Chacon</strong> y <strong>Ben Straub</strong> escribieron <em>Pro Git</em>, publicado
+                    por <a href="https://www.apress.com/" target="_blank" rel="noopener noreferrer">Apress</a>.</p>
+            </div>
 
-            <!-- IMÁGENES EN SU PROPIO CONTAINER -->
-            <div class="authors-images-container">
-                <figure>
+            <!-- Scott Chacon -->
+            <article class="autor-card">
+                <figure class="autor-img">
                     <img src="./assets/images/scottChacon.jpg" alt="Scott Chacón">
                     <figcaption>Scott Chacón</figcaption>
                 </figure>
-            </div>
-            <h3>Acerca de Scott (edición profesional)</h3>
-            <blockquote>
-                “Scott Chacon es el ex‑cofundador de GitHub; ahora cofundador de GitButler, un cliente de control de
-                versiones de próxima generación con sede en Berlín. Scott ayudó a hacer crecer GitHub de 4
-                cofundadores
-                a
-                450 empleados durante 8 años y finalmente fue adquirido por Microsoft por 7.500.000.000 millones de
-                dólares.
-                También
-                es autor de <strong>Pro Git</strong>, publicado por Apress y disponible en git‑scm.com.”
-            </blockquote>
+                <div class="autor-info">
+                    <h3>Scott Chacón</h3>
+                    <p>Ex-cofundador de GitHub, ahora en <a href="https://gitbutler.com/" target="_blank"
+                            rel="noopener noreferrer">GitButler</a>.</p>
+                    <details class="autor-details">
+                        <summary>Ver más</summary>
+                        <p>Llevó GitHub de 4 a 450 empleados. Certificación WSET Nivel 3 en vinos. Dirige un refugio de
+                            perros en Berlín.</p>
+                    </details>
+                </div>
+            </article>
 
-            <p>Noticias no relacionadas: certificación WSET Nivel 3 y propietario de un refugio de perros en las
-                afueras
-                de
-                Berlín.</p> <br>
-            <h3>Breve reseña de <strong>Ben Straub</strong></h3>
-            <p class="jsutificado"><a href="http://ben.straub.cc/" target="_blank" rel="noopener noreferrer"><strong>Ben
-                        Straub</strong></a>
-                es un ingeniero de software, autor y conferencista nacido en Wyoming, que ha vivido en varias partes
-                del
-                oeste de Estados Unidos antes de establecerse en Portland, Oregon. Es conocido principalmente como
-                coautor del libro <a href="https://www.amazon.com/-/es/Scott-Chacon/dp/1484200772" target="_blank"
-                    rel="noopener noreferrer"><strong>Pro Git (segunda edición)</strong></a>, una referencia
-                esencial
-                para el uso avanzado de Git, junto con <a href="https://scottchacon.com/about/" target="_blank"
-                    rel="noopener noreferrer">Scott Chacón</a>. El libro, ampliamente reconocido por su calidad y
-                exhaustividad, fue actualizado para Git versión 2.0 e incluye un capítulo dedicado a GitHub. <br>
-                <br>
-                Durante su carrera, Ben ha trabajado en diversos campos, desde <a
-                    href="https://learn.microsoft.com/es-es/windows-hardware/drivers/kernel/types-of-windows-drivers"
-                    target="_blank" rel="noopener noreferrer"><strong>controladores de dispositivos
-                        enWindows</strong></a>
-                y aplicaciones nativas hasta sistemas en la nube y microservicios. Ha sido empleado por empresas
-                como
-                <a href="https://github.com/ben" target="_blank" rel="noopener noreferrer"><strong>GitHub</strong></a>,
-                <strong>Zendesk</strong>, <strong>Gridium</strong> y <strong>Elemica</strong>, donde ha participado
-                en
-                proyectos de desarrollo de software, automatización y herramientas para GitHub. <br><br>
-                También es un <strong>administrador certificado de Kubernetes</strong> y ha contribuido al
-                desarrollo
-                de herramientas como *libgit2*, un implementación de Git en C. Además de su trabajo técnico, Ben es
-                un defensor de prácticas de desarrollo de software sólidas y entornos de trabajo saludables.
-                Su perfil en GitHub (@ben) y en Stack Overflow muestra una fuerte presencia en la comunidad
-                de desarrollo, con contribuciones a proyectos de código abierto y respuestas técnicas. Su sitio web
-                personal, <a href="http://ben.straub.cc" target="_blank" rel="noopener noreferrer">Ben Straub</a>, y
-                su
-                presencia en redes como Twitter (@benstraub) reflejan su interés en la escritura, la fotografía,
-                el ciclismo familiar, la música y la creatividad.
-            </p>
-            <!-- IMÁGENES EN SU PROPIO CONTAINER -->
-            <div class="authors-images-container">
-                <figure>
+            <!-- Ben Straub -->
+            <article class="autor-card">
+                <figure class="autor-img">
                     <img src="./assets/images/benStraub.jpg" alt="Ben Straub">
                     <figcaption>Ben Straub</figcaption>
                 </figure>
-            </div>
-        </section>
+                <div class="autor-info">
+                    <h3>Ben Straub</h3>
+                    <p>Coautor de <strong>Pro Git</strong>. Administrador certificado de Kubernetes.</p>
+                    <details class="autor-details">
+                        <summary>Ver más</summary>
+                        <p>Trabajó en GitHub, Zendesk y Gridium. Contribuyó a libgit2. Defensor de prácticas de
+                            desarrollo sólidas.</p>
+                    </details>
+                </div>
+            </article>
+        </aside>
+
+        <!-- ===== MAIN: Contenido del tutorial ===== -->
         <main class="container">
+
             <!-- ==== INTRODUCCIÓN ==== -->
             <section id="intro">
                 <h2>Introducción</h2>
                 <p>Git es un sistema de control de versiones distribuido; GitHub es la plataforma que aloja repositorios
-                    Git
-                    y facilita la colaboración.</p>
-                <p>“Imagina que cada cambio que haces en tu proyecto queda guardado como una foto del momento. Así,
-                    siempre
-                    puedes volver
-                    atrás, comparar versiones o compartir tu trabajo con quien quieras.”</p>
-                <p>Git es precisamente eso: un sistema de control de versiones que te ayuda a llevar un registro
-                    ordenado de
-                    los cambios
-                    que haces en tus archivos, sin importar si eres alguien que recién está descubriendo la programación
-                    o
-                    un desarrollador
-                    con años de experiencia.</p>
-                <h1>¿Por qué usar Git?</h1>
-                <!-- ====================  ¿Por qué usar Git?  ==================== -->
-                <section id="por-que-usar-git">
-                    <!-- ====================  Tabla con estilo sombreado (solo afecta a esta sección)  ==================== -->
+                    Git y facilita la colaboración.</p>
+                <p>"Imagina que cada cambio que haces en tu proyecto queda guardado como una foto del momento."</p>
 
-                    <table class="why-git-table">
-                        <thead>
-                            <tr>
-                                <th>Beneficio</th>
-                                <th>Qué significa para ti</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Seguridad</td>
-                                <td>Cada vez que “guardas” tu trabajo, Git crea una instantánea que puedes recuperar en
-                                    cualquier
-                                    momento. Si algo sale mal, volver al estado anterior es tan fácil como deshacer un
-                                    paso.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Colaboración</td>
-                                <td>Puedes trabajar con otras personas en el mismo proyecto sin pisarse los cambios. Git
-                                    combina las
-                                    contribuciones de todos y muestra claramente quién hizo qué.</td>
-                            </tr>
-                            <tr>
-                                <td>Historia clara</td>
-                                <td>Cada modificación queda registrada con una breve descripción y la fecha. Con solo
-                                    mirar
-                                    la historia,
-                                    puedes entender cómo evolucionó el proyecto.</td>
-                            </tr>
-                            <tr>
-                                <td>Trabajo offline</td>
-                                <td>No necesitas estar conectado a internet todo el tiempo. Puedes crear, modificar y
-                                    revisar versiones
-                                    en tu propia máquina y sincronizarlas después.</td>
-                            </tr>
-                            <tr>
-                                <td>Flexibilidad</td>
-                                <td>Desde proyectos pequeños de una sola página web hasta gigantescos repositorios con
-                                    miles
-                                    de
-                                    archivos, Git se adapta a cualquier escala.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section>
+                <h3>¿Por qué usar Git?</h3>
+                <table class="why-git-table">
+                    <thead>
+                        <tr>
+                            <th>Beneficio</th>
+                            <th>Qué significa para ti</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Seguridad</td>
+                            <td>Instantánea recuperable en cualquier momento.</td>
+                        </tr>
+                        <tr>
+                            <td>Colaboración</td>
+                            <td>Trabaja con otros sin pisar cambios.</td>
+                        </tr>
+                        <tr>
+                            <td>Historia clara</td>
+                            <td>Cada modificación registrada con fecha y descripción.</td>
+                        </tr>
+                        <tr>
+                            <td>Trabajo offline</td>
+                            <td>Funciona sin internet, sincroniza después.</td>
+                        </tr>
+                        <tr>
+                            <td>Flexibilidad</td>
+                            <td>Adaptable a proyectos pequeños o gigantes.</td>
+                        </tr>
+                    </tbody>
+                </table>
             </section>
 
             <!-- ==== CONCEPTOS BÁSICOS ==== -->
-            <section id="git-basics">
-                <h2 class="section-title">Conceptos básicos de Git</h2>
-
-                <!-- Tarjetas de conceptos -->
+            <section id="conceptos">
+                <h2>Conceptos básicos de Git</h2>
                 <div class="concept-grid">
-
-                    <!-- Repositorio -->
                     <article class="concept-card">
-                        <h3 class="concept-title">
-                            <svg class="icon" aria-hidden="true">
+                        <h3 class="concept-title"><svg class="icon">
                                 <use href="#repo-icon" />
-                            </svg>
-                            Repositorio
-                        </h3>
-                        <p class="concept-desc">
-                            Contenedor que guarda todo el historial de cambios del proyecto.
-                        </p>
-                        <pre
-                            class="code-example"><code>git init          <!-- crea un nuevo repositorio --></code></pre>
+                            </svg>Repositorio</h3>
+                        <p class="concept-desc">Contenedor que guarda todo el historial de cambios.</p>
+                        <pre class="code-example"><code>git init</code></pre>
                     </article>
-
-                    <!-- Commit -->
                     <article class="concept-card">
-                        <h3 class="concept-title">
-                            <svg class="icon" aria-hidden="true">
+                        <h3 class="concept-title"><svg class="icon">
                                 <use href="#commit-icon" />
-                            </svg>
-                            Commit
-                        </h3>
-                        <p class="concept-desc">
-                            Instantánea del proyecto en un momento dado.
-                        </p>
-                        <pre class="code-example"><code>git commit -m "Añadir README"</code></pre>
+                            </svg>Commit</h3>
+                        <p class="concept-desc">Instantánea del proyecto en un momento dado.</p>
+                        <pre class="code-example"><code>git commit -m "Mensaje"</code></pre>
                     </article>
-
-                    <!-- Branch (rama) -->
                     <article class="concept-card">
-                        <h3 class="concept-title">
-                            <svg class="icon" aria-hidden="true">
+                        <h3 class="concept-title"><svg class="icon">
                                 <use href="#branch-icon" />
-                            </svg>
-                            Branch (rama)
-                        </h3>
-                        <p class="concept-desc">
-                            Línea paralela de desarrollo que permite trabajar de forma aislada.
-                        </p>
+                            </svg>Branch</h3>
+                        <p class="concept-desc">Línea paralela de desarrollo.</p>
                         <pre class="code-example"><code>git branch nueva-funcionalidad</code></pre>
                     </article>
-
-                    <!-- Merge -->
                     <article class="concept-card">
-                        <h3 class="concept-title">
-                            <svg class="icon" aria-hidden="true">
+                        <h3 class="concept-title"><svg class="icon">
                                 <use href="#merge-icon" />
-                            </svg>
-                            Merge
-                        </h3>
-                        <p class="concept-desc">
-                            Unir cambios de una rama a otra.
-                        </p>
+                            </svg>Merge</h3>
+                        <p class="concept-desc">Unir cambios de una rama a otra.</p>
                         <pre class="code-example"><code>git merge nueva-funcionalidad</code></pre>
                     </article>
-
-                    <!-- Staging area -->
                     <article class="concept-card">
-                        <h3 class="concept-title">
-                            <svg class="icon" aria-hidden="true">
+                        <h3 class="concept-title"><svg class="icon">
                                 <use href="#stage-icon" />
-                            </svg>
-                            Staging area
-                        </h3>
-                        <p class="concept-desc">
-                            Zona intermedia donde se preparan los archivos antes del commit.
-                        </p>
+                            </svg>Staging</h3>
+                        <p class="concept-desc">Zona intermedia antes del commit.</p>
                         <pre class="code-example"><code>git add archivo.txt</code></pre>
                     </article>
-
                 </div>
             </section>
 
             <!-- ==== INSTALACIÓN ==== -->
             <section id="instalacion">
                 <h2>Instalación</h2>
-
                 <div class="command-block">
                     <pre><code>brew install git</code></pre>
                 </div>
                 <div class="command-block">
                     <pre><code>sudo apt-get update && sudo apt-get install git</code></pre>
                 </div>
-
-                <p>En Windows: descarga el instalador desde <a href="https://git-scm.com/" target="_blank"
+                <p>En Windows: descarga desde <a href="https://git-scm.com/" target="_blank"
                         rel="noopener noreferrer">git‑scm.com</a>.</p>
             </section>
 
@@ -387,48 +222,48 @@
                     <tbody>
                         <tr>
                             <td>git init</td>
-                            <td>Crea un nuevo repositorio local.</td>
+                            <td>Crea repositorio local</td>
                             <td><code>git init mi-proyecto</code></td>
                         </tr>
                         <tr>
                             <td>git clone</td>
-                            <td>Clona un repositorio remoto.</td>
-                            <td><code>git clone https://github.com/usuario/repo.git</code></td>
+                            <td>Clona repositorio remoto</td>
+                            <td><code>git clone URL</code></td>
                         </tr>
                         <tr>
                             <td>git status</td>
-                            <td>Muestra el estado de los archivos.</td>
+                            <td>Muestra estado de archivos</td>
                             <td><code>git status</code></td>
                         </tr>
                         <tr>
                             <td>git add</td>
-                            <td>Agrega archivos al staging area.</td>
+                            <td>Agrega archivos al staging</td>
                             <td><code>git add .</code></td>
                         </tr>
                         <tr>
                             <td>git commit</td>
-                            <td>Registra los cambios.</td>
+                            <td>Registra cambios</td>
                             <td><code>git commit -m "Mensaje"</code></td>
                         </tr>
                         <tr>
                             <td>git push</td>
-                            <td>Envía commits al remoto.</td>
+                            <td>Envía commits al remoto</td>
                             <td><code>git push origin main</code></td>
                         </tr>
                         <tr>
                             <td>git pull</td>
-                            <td>Trae y fusiona cambios del remoto.</td>
+                            <td>Trae cambios del remoto</td>
                             <td><code>git pull origin main</code></td>
                         </tr>
                         <tr>
                             <td>git branch</td>
-                            <td>Lista o crea ramas.</td>
-                            <td><code>git branch nueva-funcionalidad</code></td>
+                            <td>Lista o crea ramas</td>
+                            <td><code>git branch nueva</code></td>
                         </tr>
                         <tr>
                             <td>git merge</td>
-                            <td>Fusiona una rama en la actual.</td>
-                            <td><code>git merge nueva-funcionalidad</code></td>
+                            <td>Fusiona una rama</td>
+                            <td><code>git merge nueva</code></td>
                         </tr>
                     </tbody>
                 </table>
@@ -438,15 +273,12 @@
             <section id="flujo">
                 <h2>Flujo de trabajo típico</h2>
                 <ol>
-                    <li>Crear repositorio (<code>git init</code>).</li>
-                    <li>Añadir archivos (<code>git add .</code>).</li>
-                    <li>Hacer commit (<code>git commit -m "mensaje"</code>).</li>
-                    <li>Crear repositorio remoto en GitHub y enlazarlo (<code>git remote add origin …</code>).</li>
-                    <li>Push al remoto (<code>git push -u origin main</code>).</li>
-                    <li>Crear ramas para nuevas funcionalidades, trabajar, mergear, etc.</li>
+                    <li>Crear repositorio (<code>git init</code>)</li>
+                    <li>Añadir archivos (<code>git add .</code>)</li>
+                    <li>Hacer commit (<code>git commit -m "mensaje"</code>)</li>
+                    <li>Enlazar remoto (<code>git remote add origin URL</code>)</li>
+                    <li>Push al remoto (<code>git push -u origin main</code>)</li>
                 </ol>
-
-                <!-- Diagrama de flujo (puedes usar tu propio SVG) -->
                 <figure>
                     <img src="./assets/img/flujo.svg" alt="Diagrama de flujo de trabajo con Git" class="responsive-img">
                     <figcaption>Flujo de trabajo resumido</figcaption>
@@ -456,45 +288,40 @@
             <!-- ==== GITHUB ==== -->
             <section id="github">
                 <h2>Trabajar con GitHub</h2>
-                <p>Pasos básicos para crear un repo remoto:</p>
                 <ol>
-                    <li>En GitHub, pulsa <strong>New repository</strong>.</li>
-                    <li>Define nombre, descripción y visibilidad.</li>
-                    <li>No marques “Initialize with a README”.</li>
-                    <li>Copia la URL del repo (HTTPS o SSH).</li>
+                    <li>En GitHub, pulsa <strong>New repository</strong></li>
+                    <li>Define nombre, descripción y visibilidad</li>
+                    <li>No marques "Initialize with a README"</li>
+                    <li>Copia la URL del repo (HTTPS o SSH)</li>
                     <li>En tu terminal: <code>git remote add origin &lt;URL&gt;</code></li>
-                    <li>Empuja tu rama principal: <code>git push -u origin main</code></li>
+                    <li>Empuja tu rama: <code>git push -u origin main</code></li>
                 </ol>
                 <p>También puedes usar <strong>Fork</strong>, <strong>Pull Request</strong> y <strong>Issues</strong>
-                    para
-                    colaborar.</p>
+                    para colaborar.</p>
             </section>
 
             <!-- ==== PRÁCTICA EN LÍNEA ==== -->
             <section id="practica">
                 <h2>Práctica en línea</h2>
                 <p>Abre el workspace en Replit y sigue los ejercicios propuestos:</p>
-
                 <a href="https://replit.com/@TU_USUARIO/git-tutorial?lite=true" target="_blank"
                     rel="noopener noreferrer" class="button">
                     <span aria-hidden="true">🚀</span> Abrir workspace en Replit
                 </a>
-
-                <!-- Embed opcional (solo si la CSP lo permite) -->
                 <iframe src="https://replit.com/@TU_USUARIO/git-tutorial?lite=true" width="100%" height="500"
                     style="border:0;border-radius:4px;margin-top:1rem;"
                     sandbox="allow-scripts allow-same-origin allow-modals" loading="lazy" title="Workspace Replit">
                 </iframe>
             </section>
         </main>
+    </div>
 
-        <footer class="site-footer">
-            <p>© 2026 — <a href="https://github.com/TU_USUARIO/git-tutorial" target="_blank"
-                    rel="noopener noreferrer">Git
-                    Tutorial</a></p>
-        </footer>
+    <footer class="site-footer">
+        <p>© 2026 — <a href="https://github.com/TU_USUARIO/git-tutorial" target="_blank" rel="noopener noreferrer">Git
+                Tutorial</a></p>
+    </footer>
 
-        <script src="./js/main.js" defer></script>
+    <script src="./js/main.js" defer></script>
 </body>
 
 </html>
